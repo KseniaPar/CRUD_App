@@ -21,29 +21,29 @@ public class UserServiceImp implements UserService {
 
     @Override
     @Transactional
-    public void save(User user) {
-        userDAO.save(user);
+    public void saveUser(User user) {
+        userDAO.saveUser(user);
     }
 
     @Override
-    public User findById(long id) {
-        return userDAO.findById(id);
-    }
-
-    @Override
-    @Transactional
-    public void update(User user) {
-        userDAO.update(user);
+    public User findUserById(long id) {
+        return userDAO.findUserById(id);
     }
 
     @Override
     @Transactional
-    public void delete(long id) {
-        userDAO.delete(id);
+    public void updateUser(User user) {
+        userDAO.updateUser(user);
     }
 
     @Override
-    public List<User> showAll() {
-        return userDAO.showAll();
+    @Transactional
+    public void deleteUserById(long id) {
+        userDAO.deleteUserById(id);
+    }
+
+    @Override
+    public List<User> showAllUsers() {
+        return userDAO.showAllUsers();
     }
 }

@@ -1,21 +1,15 @@
 package web.model;
 
-import lombok.Getter;
-import lombok.Setter;
-import org.springframework.lang.NonNull;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "users")
-@Getter
-@Setter
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    @NonNull
     private long id;
 
     @Column(name = "first_name")
@@ -41,4 +35,43 @@ public class User {
 
     }
 
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }
