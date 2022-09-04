@@ -15,9 +15,7 @@ public class UserServiceImp implements UserService {
     private UserDAO userDAO;
 
     @Autowired
-    public void setUserDAO(UserDAO userDAO) {
-        this.userDAO = userDAO;
-    }
+    public UserServiceImp(UserDAO userDAO) { this.userDAO = userDAO; }
 
     @Override
     @Transactional
